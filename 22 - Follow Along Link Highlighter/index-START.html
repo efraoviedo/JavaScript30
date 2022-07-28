@@ -9,11 +9,11 @@
 
     <nav>
       <ul class="menu">
-        <li><a href="">Home</a></li>
-        <li><a href="">Order Status</a></li>
+        <li><a href="file:///home/efranor/repos/index.html/%20index.html">Home</a></li>
+        <li><a href="https://www.google.com/">Order Status</a></li>
         <li><a href="">Tweets</a></li>
-        <li><a href="">Read Our History</a></li>
-        <li><a href="">Contact Us</a></li>
+        <li><a href="https://www.theodinproject.com/lessons/foundations-fundamentals-part-5">Read Our History</a></li>
+        <li><a href="https://github.com/efraoviedo/index.html">Contact Us</a></li>
       </ul>
     </nav>
 
@@ -27,7 +27,31 @@
 
   <script>
     // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    const triggers = document.querySelectorAll('a');
+  const highlight = document.createElement('span');
+  highlight.classList.add('highlight');
+  document.body.appendChild(highlight);
+
+  function highlightLink() {
+    const linkCoords = this.getBoundingClientRect();
+    console.log(linkCoords);
+    const coords = {
+      width: linkCoords.width,
+      height: linkCoords.height,
+      top: linkCoords.top + window.scrollY,
+      left: linkCoords.left + window.scrollX
+    };
+
+    highlight.style.width = `${coords.width}px`;
+    highlight.style.height = `${coords.height}px`;
+    highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+
+  }
+
+  triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
   </script>
+  <p style="color: white;">Dev Efrain Oviedo T.</p>
 </body>
 </html>
 

@@ -1,11 +1,13 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
-  background: #ffc600;
+  background: #beaa62;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+  font-size: xx-large;
+  color: teal;
 }
 
 body {
